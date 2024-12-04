@@ -1,0 +1,74 @@
+.search-bg{
+    background:url(web-search.png);
+    background-size: cover;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-direction: column;
+}
+
+.search input{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color:white ;
+    border: none;
+    border-radius: 5px;
+    
+}
+
+.search ::placeholder{
+    color: rgb(78, 82, 200);
+}
+.container{
+    margin-top: 80px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+.courses{
+    align-items: center;
+    border: 3px solid;
+    border-radius: 8px;
+    border-color: rgb(103, 107, 204);;
+    padding: 15px;
+    width: 280px;
+    text-align: center;
+    box-shadow: rgba(0,0,0,1);
+}
+.course-images img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    object-fit:cover ;
+}
+
+.course-name{
+    font-size: 1.2em;
+    margin: 10px;
+    color: rgb(60, 84, 218);
+}
+
+.lecturer-names{
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: rgb(60, 84, 218);
+}
+.apply-button button{
+    background-color: rgb(60, 84, 218);
+    color: white;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+.apply-button:hover{
+    opacity: 0.7;
+}
