@@ -18,8 +18,8 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     gap: 15px;
+
 }
 .header-links a{
     text-decoration: none;
@@ -45,7 +45,10 @@ header{
     border-radius: 5px;
     
 }
-
+.search input:focus {
+    outline: none;
+    border: 2px solid rgb(78, 82, 200); 
+}
 .search ::placeholder{
     color: rgb(78, 82, 200);
 }
@@ -61,7 +64,8 @@ header{
 .courses:hover{
     margin-bottom: 10px;
     margin-top: 10px;
-    transition: 0.2s;
+    transition: 0.3s, ease, box-shadow 0.3s ease;
+    box-shadow: rgba(0,0,0,0.2) 0px 10px 15px;
 }
 .courses{
     align-items: center;
@@ -72,6 +76,8 @@ header{
     width: 280px;
     text-align: center;
     box-shadow: rgba(0,0,0,1);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
 }
 .course-images img{
     max-width: 100%;
@@ -101,9 +107,11 @@ header{
     border: none;
     border-radius: 5px;
     cursor: pointer;   
+    transition: background-color 0.3s ease, opacity 0.3s ease;
 }
-.apply-button:hover{
+.apply-button button:hover{
     opacity: 0.7;
+    background-color: rgb(50, 70, 180);
 }
 
 .dev{
