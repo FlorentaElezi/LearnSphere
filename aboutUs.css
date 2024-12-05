@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+.about-us {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.about-us .container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-us .content {
+    display: flex;
+    align-items: center;
+}
+  
+.about-us .text {
+    max-width: 600px;
+    margin-left: 300px;
+}
+  
+.about-us .stats {
+    display: flex;
+    gap: 30px;
+    color: rgb(225, 154, 22);
+    border: 3px;
+    font-family: fantasy;
+}
+  
+.about-us .image img {
+    max-width: 50%;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+  
+button {
+    padding: 10px 20px;
+    background-color: rgb(78, 82, 200);;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+  button:hover {
+    background-color: #003366;
+}
+  
