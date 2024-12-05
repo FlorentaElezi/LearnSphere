@@ -30,6 +30,12 @@
     gap: 30px;
     justify-content: center;
 }
+
+.courses:hover{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    transition: 0.2s;
+}
 .courses{
     align-items: center;
     border: 3px solid;
@@ -71,4 +77,11 @@
 }
 .apply-button:hover{
     opacity: 0.7;
+}
+
+.dev{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(60, 84, 218);
+    text-align: center;
+    margin-top: 15px;
 }
