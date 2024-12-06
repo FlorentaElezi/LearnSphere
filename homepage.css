@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 header{
+    position: sticky;
+    top: 0;
     padding: 25px;
     gap: 20px;
     font-size: 20px;
@@ -102,7 +104,10 @@ header{
     border-radius: 4px;
     margin-bottom: 10px;
     object-fit:cover ;
+    width: 200px;     
+    height: 200px;  
 }
+
 
 .course-name{
     font-size: 1.2em;
@@ -135,7 +140,7 @@ header{
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(60, 84, 218);
     text-align: center;
-    margin-top: 15px;
+    margin-top: 40px;
 }
 footer{
     background-color:  rgb(60, 84, 218);
