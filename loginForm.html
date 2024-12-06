@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="loginForm.css">
 </head>
 <body>
     <div class="loginForm">
-        <h3>Log In</h3>
+        <h2>Login</h2>
+        <form >
+            <label for="logIn-email" >Email:</label>
+            <input type="email" id="logIn-email" placeholder="Enter yout email" required>
+            <label for="logIn-password">Password:</label>
+            <input type="password" id="logIn-password" placeholder="Enter yout password" required>
+            <button type="submit">Log In</button>
+            <p>Don't have account?  <a href="" onclick="">Sign Up</a></p>
+        </form>
     </div>
+
 </body>
 </html>
