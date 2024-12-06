@@ -2,6 +2,9 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
+.container h1{
+   color: rgb(78, 82, 200); 
+}
 .about-us {
     padding: 20px;
     display: flex;
@@ -41,7 +44,7 @@ body {
   
 button {
     padding: 10px 20px;
-    background-color: rgb(78, 82, 200);;
+    background-color: rgb(78, 82, 200);
     color: white;
     border: none;
     border-radius: 5px;
@@ -49,6 +52,56 @@ button {
 }
   
   button:hover {
-    background-color: #003366;
+    opacity: 0.7;
+    background-color: rgb(50, 70, 180);
 }
+
+.technologies {
+    background: rgb(238, 238, 238);
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .technologies h2 {
+    margin-bottom: 20px;
+    color:rgb(78, 82, 200) ;
+  }
+  
+  .tech-stack {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .tech h3 {
+    color: rgb(225, 154, 22);
+  }
+  
+  .tech ul {
+    list-style: none;
+    padding: 0;
+  }
+  .team {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .team h2{
+    color:rgb(78, 82, 200) ;
+  }
+  .team-members {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .member {
+    text-align: center;
+  }
+  
+  .member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
   
