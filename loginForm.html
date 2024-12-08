@@ -26,7 +26,7 @@
         }
 
         function validatePassword(password) {
-            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
             return passwordRegex.test(password);
         }
 
@@ -37,7 +37,7 @@
             }
             
             if (!validatePassword(password)) {
-                alert('Password must be at least 8 characters long and include uppercase, lowercase, a number, and a special character.');
+                alert('Password must be at least 8 characters long and include uppercase, lowercase and a number');
                 return false;
             }
 
