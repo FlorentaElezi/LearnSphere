@@ -44,104 +44,49 @@ header{
     text-decoration: none;
     color: whitesmoke;
 }
-.search-bg{
-    background:url(web-search.png);
+.pjesa-pare{
+    background:url(home-page.png);
     background-size: cover;
-    height: 350px;
+    height: 60vh;
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: center;
-    color: white;
+    color: whitesmoke;
     flex-direction: column;
 }
-
-.search input{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    padding: 10px;
-    background-color:white ;
-    border: none;
-    border-radius: 5px;
-    
-}
-.search input:focus {
-    outline: none;
-    border: 2px solid rgb(78, 82, 200); 
-}
-.search ::placeholder{
-    color: rgb(78, 82, 200);
-}
-.container{
-    margin-top: 80px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.courses:hover{
-    margin-bottom: 10px;
-    margin-top: 10px;
-    transition: 0.3s, ease, box-shadow 0.3s ease;
-    box-shadow: rgba(0,0,0,0.2) 0px 10px 15px;
-}
-.courses{
-    align-items: center;
-    border: 3px solid;
-    border-radius: 8px;
-    border-color: rgb(103, 107, 204);;
-    padding: 15px;
-    width: 280px;
-    text-align: center;
-    box-shadow: rgba(0,0,0,1);
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
-}
-.course-images img{
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    object-fit:cover ;
-    width: 200px;     
-    height: 200px;  
-}
-
-
-.course-name{
-    font-size: 1.2em;
-    margin: 10px;
+.explore{
+    background-color: whitesmoke;
     color: rgb(60, 84, 218);
-}
-
-.lecturer-names{
-    font-size: 1em;
-    margin-bottom: 15px;
-    color: rgb(60, 84, 218);
-}
-.apply-button button{
-    background-color: rgb(60, 84, 218);
-    color: white;
-    margin-left: 8px;
-    margin-right: 8px;
-    padding: 10px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;   
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-.apply-button button:hover{
-    opacity: 0.7;
-    background-color: rgb(50, 70, 180);
-}
-
-.dev{
+    height: 40px;
+    width: 150px;
+    border-radius: 18px;
     font-family: Arial, Helvetica, sans-serif;
-    color: rgb(60, 84, 218);
-    text-align: center;
-    margin-top: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-left: 15px ;
+    padding-right: 15px;
+    margin-top: 5px;
 }
+.explore:hover{
+    background-color:  rgb(60, 84, 218);
+}
+.explore:hover a{
+    color: whitesmoke;
+}
+.per-ne{
+    position: relative;
+    color: whitesmoke;
+    padding: 20px;
+    max-width: 600px;
+    margin-top: 200px;
+}
+.per-ne p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
 footer{
     background-color:  rgb(60, 84, 218);
     color: whitesmoke;
