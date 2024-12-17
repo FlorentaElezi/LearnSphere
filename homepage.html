@@ -24,6 +24,8 @@
     </header>
 
     <section class="pjesa-pare">
+        <div class="slider-container">
+            <img id="slideshow" src="slider-img1.png" alt="slider image">
         <div class="per-ne">
             <p>Learn New Skills & Popular Courses</p>
             <h2>Where Learning Meets Opportunity</h2>
@@ -31,7 +33,9 @@
             <button class="explore">
                 <a href="kurset.html">Explore Now</a>
             </button>
+        </div>
         </div>        
+        <button class="slider-button"  onclick="ndrroImg()">Next</button>
     </section>
 
     <div class="container">
@@ -101,6 +105,23 @@
     <hr>
     <p class="copyright">&#169; 2024 Learn Sphere.All rights reserved</p>
 </footer>
-
+<script>
+    var i = 0;
+    var imgArray = [
+    "slider-img1.png",
+    "slider-img2.png",
+    "slider-img3.png",
+    "home-page.png"
+    ];
+    function ndrroImg() {
+    document.getElementById('slideshow').src = imgArray[i];
+    if (i < imgArray.length - 1) {
+        i++;
+    } else {
+        i = 0;
+      }
+    }
+    document.body.addEventListener('load', ndrroImg());
+    </script>
 </body>
 </html>
