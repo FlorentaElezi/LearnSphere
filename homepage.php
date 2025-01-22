@@ -33,7 +33,7 @@
             </div>
             <div class="offer">
                 <img src="Pics/member-1.png" alt="member-1">
-                <h3>Expert Trainers</h3>
+                <a href="ourTeam.php"><h3>Expert Trainers</h3></a>
                 <p>Guided by top-notch industry experts.</p>
             </div>
             <div class="offer">

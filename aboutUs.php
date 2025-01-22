@@ -79,22 +79,22 @@
         <div class="team-members">
           <div class="member">
             <img src="Pics/member-1.png" alt="Alex">
-            <p>Alex Johnson</p>
+            <a href="ourTeam.php"><p>Alex Johnson</p></a>
             <p>Full Stack Developer</p>
           </div>
           <div class="member">
             <img src="Pics/member-2.png" alt="Emma">
-            <p>Emma Davis</p>
+            <a href="ourTeam.php"><p>Emma Davis</p></a>
             <p>Frontend Engineer</p>
           </div>
           <div class="member">
             <img src="Pics/member-3.png" alt="Diana">
-            <p>Diana Smith</p>
+            <a href="ourTeam.php"><p>Diana Smith</p></a>
             <p>Backend Developer</p>
           </div>
           <div class="member">
             <img src="Pics/member-4.png" alt="Sophia">
-            <p>Sophia Lee</p>
+            <a href="ourTeam.php"><p>Sophia Lee</p></a>
             <p>Database Administrator</p>
           </div>
         </div>

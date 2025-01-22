@@ -8,6 +8,7 @@
 </head>
 <body>
     <?php include ('Header.html')?>
+    
     <div class="search-bg">
         <h1>Start Developing With Us</h1>
         <h3> Learn Sphere</h3>
