@@ -7,25 +7,10 @@
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h2>Learn Sphere</h2>
-        </div>
-        <div class="header-links">
-            <a href="homepage.html">Home</a>
-            <a href="kurset.html">Course</a>
-            <a href="aboutUs.html">About Us</a>
-        </div>
-
-        <button class="logIn">
-            <a href="loginForm.html">Log In</a>
-        </button>
-
-    </header>
-
+    <?php include ('Header.html')?>
     <section class="pjesa-pare">
         <div class="slider-container">
-            <img id="slideshow" src="slider-img1.png" alt="slider image">
+            <img id="slideshow" src="Pics/slider-img1.png" alt="slider image">
         <div class="per-ne">
             <p>Learn New Skills & Popular Courses</p>
             <h2>Where Learning Meets Opportunity</h2>
@@ -42,22 +27,22 @@
         <h4>What We Offer</h4>
         <div class="container-offer">
             <div class="offer">
-                <img src="career-support.png" alt="career-support">
+                <img src="Pics/career-support.png" alt="career-support">
                 <h3>Career Support</h3>
                 <p>Get expert advice, resume building, and job placement assistance.</p>      
             </div>
             <div class="offer">
-                <img src="member-1.png" alt="member-1">
+                <img src="Pics/member-1.png" alt="member-1">
                 <h3>Expert Trainers</h3>
                 <p>Guided by top-notch industry experts.</p>
             </div>
             <div class="offer">
-                <img src="practical-skills.png" alt="practical-skills">
+                <img src="Pics/practical-skills.png" alt="practical-skills">
                 <h3>Practical Skills</h3>
                 <p>Gain real-world skills through hands-on projects, case studies, and interactive assignments.</p>
             </div>
             <div class="offer">
-                <img src="get-certified.png" alt="get-certified">
+                <img src="Pics/get-certified.png" alt="get-certified">
                 <h3>Get Certified</h3>
                 <p>Earn certificates to boost your career.</p>
             </div>
@@ -75,7 +60,7 @@
             </button>
         </div>
         <div class="foto">
-            <img src="our-courses.png" alt="our-courses">
+            <img src="Pics/our-courses.png" alt="our-courses">
         </div>
     </div>
 
@@ -108,10 +93,10 @@
 <script>
     var i = 0;
     var imgArray = [
-    "slider-img1.png",
-    "slider-img2.png",
-    "slider-img3.png",
-    "home-page.png"
+    "Pics/slider-img1.png",
+    "Pics/slider-img2.png",
+    "Pics/slider-img3.png",
+    "Pics/home-page.png"
     ];
     function ndrroImg() {
     document.getElementById('slideshow').src = imgArray[i];

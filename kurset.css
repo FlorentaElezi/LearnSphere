@@ -3,25 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-header{
-    position: sticky;
-    top: 0;
-    padding: 25px;
-    gap: 20px;
-    font-size: 20px;
-    background-color: rgb(60, 84, 218);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.header-links{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
 .logIn{
     background-color: whitesmoke;
     color: rgb(60, 84, 218);
@@ -45,12 +26,8 @@ header{
     font-family: Arial, Helvetica, sans-serif;
     color: whitesmoke;
 }
-.header-links a{
-    text-decoration: none;
-    color: whitesmoke;
-}
 .search-bg{
-    background:url(web-search.png);
+    background-image:url(Pics/web-search.png);
     background-size: cover;
     height: 350px;
     display: flex;

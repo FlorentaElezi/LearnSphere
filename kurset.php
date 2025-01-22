@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="kurset.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h2>Learn Sphere</h2>
-        </div>
-        <div class="header-links">
-            <a href="homepage.html">Home</a>
-            <a href="kurset.html">Course</a>
-            <a href="aboutUs.html">About Us</a>
-        </div>
-
-        <button class="logIn">
-            <a href="loginForm.html">Log In</a>
-        </button>
-    </header>
-
+    <?php include ('Header.html')?>
     <div class="search-bg">
         <h1>Start Developing With Us</h1>
         <h3> Learn Sphere</h3>
@@ -35,7 +21,7 @@
     <div class="container">
         <div class="courses">
         <div class="course-images">
-            <img src="html-image.png" alt="html-img">
+            <img src="Pics/html-image.png" alt="html-img">
         </div>
         <div class="course-name">
             <h2>HTML</h2>
@@ -50,7 +36,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="css-image.png" alt="css-img">
+            <img src="Pics/css-image.png" alt="css-img">
         </div>
         <div class="course-name">
             <h2>CSS</h2>
@@ -65,7 +51,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="javascript-image.png" alt="js-img">
+            <img src="Pics/javascript-image.png" alt="js-img">
         </div>
         <div class="course-name">
             <h2>JavaScript</h2>
@@ -83,7 +69,7 @@
     <div class="container">
     <div class="courses">
         <div class="course-images">
-            <img src="python-imagee.png" alt="python-img">
+            <img src="Pics/python-imagee.png" alt="python-img">
         </div>
         <div class="course-name">
             <h2>Python</h2>
@@ -98,7 +84,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="php-image.png" alt="php-img">
+            <img src="Pics/php-image.png" alt="php-img">
         </div>
         <div class="course-name">
             <h2>PHP</h2>
@@ -113,7 +99,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="java-image.png" alt="java-img">
+            <img src="Pics/java-image.png" alt="java-img">
         </div>
         <div class="course-name">
             <h2>JAVA</h2>
@@ -132,7 +118,7 @@
     <div class="container">
     <div class="courses">
         <div class="course-images">
-            <img src="mysql-image.png" alt="sql-img">
+            <img src="Pics/mysql-image.png" alt="sql-img">
         </div>
         <div class="course-name">
             <h2>MySQL</h2>
@@ -147,7 +133,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="postgresql-image.png" alt="pgsql-img">
+            <img src="Pics/postgresql-image.png" alt="pgsql-img">
         </div>
         <div class="course-name">
             <h2>PostgreSQL</h2>
@@ -162,7 +148,7 @@
 
     <div class="courses">
         <div class="course-images">
-            <img src="oracle-image.png" alt="oracle-img">
+            <img src="Pics/oracle-image.png" alt="oracle-img">
         </div>
         <div class="course-name">
             <h2>Oracle Database</h2>

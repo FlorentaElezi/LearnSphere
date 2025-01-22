@@ -7,23 +7,7 @@
     <link rel="stylesheet" href="aboutUs.css">
 </head>
 <body>
-
-  <header>
-    <div class="logo">
-        <h2>Learn Sphere</h2>
-    </div>
-    <div class="header-links">
-        <a href="homepage.html">Home</a>
-        <a href="kurset.html">Course</a>
-        <a href="aboutUs.html">About Us</a>
-    </div>
-
-    <button class="logIn">
-        <a href="loginForm.html">Log In</a>
-    </button>
-
-</header>
-
+<?php include ('Header.html')?>
 <div class="top-bg">
   <h1>About Us</h1>
   <h3> Learn Sphere</h3>
@@ -51,7 +35,7 @@
               <button>Get a Free Consultation</button>
             </div>
             <div class="image">
-              <img src="coding-team.img" alt="Development Team">
+              <img src="Pics/coding-team.img" alt="Development Team">
             </div>
           </div>
         </div>
@@ -94,22 +78,22 @@
         <h2>Meet Our Development Team</h2>
         <div class="team-members">
           <div class="member">
-            <img src="member-1.png" alt="Alex">
+            <img src="Pics/member-1.png" alt="Alex">
             <p>Alex Johnson</p>
             <p>Full Stack Developer</p>
           </div>
           <div class="member">
-            <img src="member-2.png" alt="Emma">
+            <img src="Pics/member-2.png" alt="Emma">
             <p>Emma Davis</p>
             <p>Frontend Engineer</p>
           </div>
           <div class="member">
-            <img src="member-3.png" alt="Diana">
+            <img src="Pics/member-3.png" alt="Diana">
             <p>Diana Smith</p>
             <p>Backend Developer</p>
           </div>
           <div class="member">
-            <img src="member-4.png" alt="Sophia">
+            <img src="Pics/member-4.png" alt="Sophia">
             <p>Sophia Lee</p>
             <p>Database Administrator</p>
           </div>
