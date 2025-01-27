@@ -15,8 +15,8 @@
             <label for="logIn-password">Password:</label>
             <input type="password" id="logIn-password" placeholder="Enter your password" required>
             <button type="submit">Log In</button>
-            <p>Don't have account?  <a href="signupForm.html">Sign Up</a></p>
-            <p><a href="homepage.html">Go back</a></p>
+            <p>Don't have account?  <a href="signupForm.php">Sign Up</a></p>
+            <p><a href="homepage.php">Go back</a></p>
         </form>
     </div>
     <script>

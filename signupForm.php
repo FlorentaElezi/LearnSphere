@@ -17,8 +17,8 @@
             <label for="signup-password">Password:</label>
             <input type="password" id="signup-password" placeholder="Enter your password" required>
             <button type="submit">Sign Up</button>
-            <p>Already have an account? <a href="loginForm.html">Log In</a></p>
-            <p><a href="homepage.html">Go back</a></p>
+            <p>Already have an account? <a href="loginForm.php">Log In</a></p>
+            <p><a href="homepage.php">Go back</a></p>
         </form>
     </div>
 <script>

@@ -163,32 +163,6 @@
     </div>
 </div>
 
-<footer>
-    <div class="footer-container">
-        <div class="fillimi">
-            <h2 class="emri">LEARN SPHERE</h2>
-            <p class="adressa">Pejton,1000 Prishtinë,Kosovë</p>
-        </div>
-        <div class="links">
-            <p class="p-nav">Navigation</p>
-            <a href="homepage.html">Home Page</a>
-            <a href="kurset.html">Courses</a>
-            <a href="aboutUs.html">About Us</a>
-        </div>
-        <div class="number">
-            <p class="p-number">Phone Number</p>
-            <p class="numri">📞 +383 45 782 954</p>
-            <p class="numri">📞 +383 44 921 615</p>
-        </div>
-        <div class="email">
-            <p class="p-email">Email</p>
-            <p class="email"><a href="email:fe69993@ubt-uni.net">&#8226; fe69993@ubt-uni.net</a></p>
-            <p class="email"><a href="email:fh70112@ubt-uni.net">&#8226; fh70112@ubt-uni.net</a></p>
-        </div>
-    </div>
-    <hr>
-    <p class="copyright">&#169; 2024 Learn Sphere.All rights reserved</p>
-</footer>
-
+<?php include ('Footer.html')?>
 </body>
 </html>
