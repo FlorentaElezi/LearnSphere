@@ -76,7 +76,7 @@
             <h2>Python</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Tegan Price</h3>
+        <a href="ourTeam.php"><h3>Tegan Price</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -91,7 +91,7 @@
             <h2>PHP</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Emmet Crawfoord</h3>
+           <a href="ourTeam.php"><h3>Emmet Crawfoord</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -106,7 +106,7 @@
             <h2>JAVA</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Wes Gibbins</h3>
+           <a href="ourTeam.php"><h3>Wes Gibbins</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -125,7 +125,7 @@
             <h2>MySQL</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Lucas Harrington</h3>
+           <a href="ourTeam.php"><h3>Lucas Harrington</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -140,7 +140,7 @@
             <h2>PostgreSQL</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Lila Starling</h3>
+            <a href="ourTeam.php"><h3>Lila Starling</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -155,13 +155,44 @@
             <h2>Oracle Database</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Elara Storm</h3>
+        <a href="ourTeam.php"><h3>Elara Storm</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
         </div>
     </div>
 </div>
+
+<div id="load-more-container">
+    <button id="load-more-btn" class="apply-button">Load More</button>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const courses = document.querySelectorAll('.courses');
+        const loadMoreBtn = document.getElementById('load-more-btn');
+        let visibleCourses = 3;
+
+        courses.forEach((course, index) => {
+            if (index >= visibleCourses) {
+                course.style.display = 'none';
+            }
+        });
+
+        loadMoreBtn.addEventListener('click', () => {
+            visibleCourses += 3;
+            courses.forEach((course, index) => {
+                if (index < visibleCourses) {
+                    course.style.display = 'block';
+                }
+            });
+
+            if (visibleCourses >= courses.length) {
+                loadMoreBtn.style.display = 'none';
+            }
+        });
+    });
+</script>
 
 <?php include ('Footer.html')?>
 </body>

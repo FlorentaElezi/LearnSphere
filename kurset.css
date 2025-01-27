@@ -97,3 +97,25 @@
     text-align: center;
     margin-top: 40px;
 }
+
+#load-more-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+#load-more-btn {
+    background-color: rgb(60, 84, 218);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+#load-more-btn:hover {
+    opacity: 0.7;
+    background-color: rgb(50, 70, 180);
+}
+
