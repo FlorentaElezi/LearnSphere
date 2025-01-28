@@ -104,18 +104,19 @@
     justify-content: center;
     margin-bottom: 80px;
 }
-#load-more-btn {
+.apply-button{
     background-color: rgb(60, 84, 218);
     color: white;
-    padding: 10px 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: pointer;   
     transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
-#load-more-btn:hover {
+.apply-button:hover {
     opacity: 0.7;
     background-color: rgb(50, 70, 180);
 }
-

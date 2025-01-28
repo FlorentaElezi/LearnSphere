@@ -60,6 +60,82 @@
                 <p>Graphic Designer/Lecturer</p>
             </div>
         </div>
+        <div class="team-card">
+            <img src="Pics\member-7.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Mia Bennett</h3>
+                <p>JavaScript</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="Pics\member-8.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Tegan Price</h3>
+                <p>Python</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="Pics\member-9.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Lila Starling</h3>
+                <p>PostgreSQL</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="Pics\member-10.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Wes Gibbins</h3>
+                <p>Java</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="Pics\member-11.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Lucas Harrington</h3>
+                <p>MySQL</p>
+            </div>
+        </div>
+        <div class="team-card">
+            <img src="Pics\member-12.jpg" alt="Team Member">
+            <div class="info">
+                <h3>Elara Storm</h3>
+                <p>Oracle Database</p>
+            </div>
+        </div>
+
+        <div id="load-more-container">
+            <button id="load-more-btn" class="apply-button">Load More</button>
+        </div>
+
+    <script>
+         document.addEventListener("DOMContentLoaded", () => {
+        const cards = document.querySelectorAll(".team-card");
+        const loadMoreBtn = document.getElementById("load-more-btn");
+        let cardsToShow = 3;
+
+        cards.forEach((card, index) => {
+            if (index >= cardsToShow) {
+                card.style.display = "none";
+           }
+        });
+
+        loadMoreBtn.addEventListener("click", () => {
+            const hiddenCards = Array.from(cards).filter(card => card.style.display === "none");
+
+            for (let i = 0; i < 3; i++) {
+                if (hiddenCards[i]) {
+                    hiddenCards[i].style.display = "block";
+                }
+            }
+
+            if (hiddenCards.length <= 3) {
+                loadMoreBtn.style.display = "none";
+            }
+        });
+    });
+
+    </script>
+
     </section>
     <?php include ('Footer.html')?>
     

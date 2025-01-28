@@ -65,9 +65,12 @@
         </div>
     </div>
 </div>
-    <h2 class="dev">Backend Development</h2>
+
+
+<h2 class="dev">Backend Development</h2>
 
     <div class="container">
+
     <div class="courses">
         <div class="course-images">
             <img src="Pics/python-imagee.png" alt="python-img">
@@ -114,9 +117,11 @@
     </div>
 </div>
 
-    <h2 class="dev">Database</h2>
+
+<h2 class="dev">Database</h2>
 
     <div class="container">
+
     <div class="courses">
         <div class="course-images">
             <img src="Pics/mysql-image.png" alt="sql-img">
@@ -193,6 +198,7 @@
         });
     });
 </script>
+
 
 <?php include ('Footer.html')?>
 </body>

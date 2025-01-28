@@ -85,3 +85,25 @@
     margin: 0;
     color: #666;
 }
+#load-more-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.apply-button{
+  background-color: rgb(60, 84, 218);
+  color: white;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;   
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.apply-button:hover {
+  opacity: 0.7;
+  background-color: rgb(50, 70, 180);
+}
