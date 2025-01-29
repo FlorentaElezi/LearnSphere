@@ -1,46 +1,79 @@
-header{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 25px;
-    gap: 20px;
-    font-size: 20px;
-    background-color: rgb(60, 84, 218);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: Arial, Helvetica, sans-serif;
+header {
+  padding: 10px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(60, 84, 218);
+  position: relative;
+  height: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
-.logo{
-    font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
-    color: whitesmoke;
+.logo {
+  color: #fff;
 }
-.header-links{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
+.header-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 1000px;
 }
-.logIn{
-    background-color: whitesmoke;
-    color: rgb(60, 84, 218);
-    border: none;
-    height: 35px;
-    width: 75px;
-    border-radius: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-    padding-left: 15px ;
-    padding-right: 15px;
-    transform: box-shadow 0.10s;
+.header-links li {
+  list-style-type: none;
+}
+.header-links li a {
+  text-decoration: none;
+  color: #fff;
+}
+.logIn {
+  background-color: whitesmoke;
+  color: rgb(60, 84, 218);
+  border: none;
+  height: 35px;
+  width: 75px;
+  border-radius: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 15px;
+  padding-right: 15px;
+  transform: box-shadow 0.10s;
+}
+.logIn:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.10);
+}
+.menu-icon {
+  display: none;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .header-links {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      text-align: center;
+      background: rgb(60, 84, 218);
+      gap: 0;
+      max-height: 0;
   }
-  .logIn:hover{
-    box-shadow: 10px 10px 10px rgba(0,0,0,0.10);
+
+  .header-links.active {
+      max-height: 300px; 
   }
-  .header-links a{
-    text-decoration: none;
-    color: whitesmoke;
+
+  .header-links li {
+      padding: 20px;
+      padding-top: 0;
   }
+
+  .menu-icon {
+      display: block; 
+  }
+}

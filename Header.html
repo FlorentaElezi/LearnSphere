@@ -11,17 +11,29 @@
         <div class="logo">
             <h2>Learn Sphere</h2>
         </div>
-        <div class="header-links">
-            <a href="homepage.php">Home</a>
-            <a href="kurset.php">Course</a>
-            <a href="aboutUs.php">About Us</a>
-            <a href="ourTeam.php">Our Team</a>
-        </div>
+        <ul id="menuList" class="header-links">
+            <li> <a href="homepage.php">Home</a></li>
+            <li><a href="kurset.php">Course</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li><a href="ourTeam.php">Our Team</a></li>
+        </ul>
 
         <button class="logIn">
             <a href="loginForm.php">Log In</a>
         </button>
+        
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776;
+        </div>
 
     </header>
+
+    <script>
+        function toggleMenu() {
+            const menuList = document.getElementById("menuList");
+            menuList.classList.toggle("active");
+        }
+    </script>
+
 </body>
 </html>
