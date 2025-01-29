@@ -48,10 +48,9 @@
 .per-ne{
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 2%;
     transform: translateY(-50%);
     z-index: 10;  
-    background-color: rgba(0, 0, 0, 0.5); 
     color: whitesmoke;
     padding: 20px;
     max-width: 600px;

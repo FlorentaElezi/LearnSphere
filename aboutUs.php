@@ -11,9 +11,7 @@
 <div class="top-bg">
   <h1>About Us</h1>
   <h3> Learn Sphere</h3>
-  <div class="search">
-      <input type="text" class="form-control" placeholder="Search Lecturers...">
-  </div>
+  <p>Discover our journey and the story behind our achievement.</p>
 </div>
 
     <section class="about-us">

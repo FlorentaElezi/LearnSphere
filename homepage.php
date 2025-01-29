@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="homepage.css">
 </head>
 <body>
-    <?php include ('Header.html')?>
+<?php include ('Header.html')?>
     <section class="pjesa-pare">
         <div class="slider-container">
             <img id="slideshow" src="Pics/slider-img1.png" alt="slider image">
