@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="kurset.css">
 </head>
 <body>
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loginForm.php"); 
+    exit;
+}
+?>
     <?php include ('Header.html')?>
     
     <div class="search-bg">
@@ -28,7 +36,7 @@
             <h2>HTML</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Jessica Pearson</h3>
+        <a href="ourTeam.php"><h3>Jessica Pearson</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -43,7 +51,7 @@
             <h2>CSS</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Harvey Specter</h3>
+        <a href="ourTeam.php"><h3>Harvey Specter</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -58,7 +66,7 @@
             <h2>JavaScript</h2>
         </div>
         <div class="lecturer-names">
-            <h3>Mia Bennett</h3>
+        <a href="ourTeam.php"><h3>Mia Bennet</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -198,8 +206,10 @@
         });
     });
 </script>
-
-
+<?php 
+echo "Welcome, " . $_SESSION['username'] . "!";
+?>
+<a id= "logout" href="logOut.php">LogOut</a>
 <?php include ('Footer.html')?>
 </body>
 </html>

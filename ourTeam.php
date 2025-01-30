@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="ourTeam.css">
 </head>
 <body>
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loginForm.php"); 
+    exit;
+}
+
+?>
+<a href="logOut.php">Logout</a>
+
 <?php include ('Header.html')?>
 
 <div class="top-bg">
@@ -135,8 +146,11 @@
     });
 
     </script>
-
     </section>
+    <?php 
+echo "Welcome, " . $_SESSION['username'] . "!";
+?>
+<a id= "logout" href="logOut.php">LogOut</a>
     <?php include ('Footer.html')?>
     
 </body>

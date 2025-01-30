@@ -7,20 +7,45 @@
     <link rel="stylesheet" href="loginForm.css">
 </head>
 <body>
+<?php
+include_once 'Database.php';
+include_once 'User.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $db = new Database();
+    $connection = $db->getConnection();
+    $user = new User($connection);
+
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if ($user->register($username, $email, $password)) {
+        header("Location: loginForm.php"); 
+        exit;
+    } else {
+        echo "<p style='color:red;'>Error registering user!</p>";
+    }
+}
+?>
     <div class="loginForm">
         <h2>Sign Up</h2>
-        <form id="signupForm">
+        <form id="signupForm" method="POST">
             <label for="signup-username">Username:</label>
-            <input type="text" id="signup-username" placeholder="Enter your username" required>
+            <input type="text" id="signup-username" name="username" placeholder="Enter your username" required>
+
             <label for="signup-email">Email:</label>
-            <input type="email" id="signup-email" placeholder="Enter your email" required>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required>
+
             <label for="signup-password">Password:</label>
-            <input type="password" id="signup-password" placeholder="Enter your password" required>
+            <input type="password" id="signup-password" name="password" placeholder="Enter your password" required>
+
             <button type="submit">Sign Up</button>
             <p>Already have an account? <a href="loginForm.php">Log In</a></p>
             <p><a href="homepage.php">Go back</a></p>
         </form>
     </div>
+    
 <script>
     function validateUsername(username) {
     const usernameRegex = /^[a-zA-Z0-9_-]{3,15}$/;
