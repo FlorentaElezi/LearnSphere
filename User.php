@@ -9,6 +9,7 @@ class User {
 
     public function register($username, $email, $password) {
         try {
+            $emailDomain = strrchr($email, "@"); 
             $role = (substr(strrchr($email, "@"), 1) == 'ubt-uni.net') ? 'admin' : 'user';
 
     $query = "INSERT INTO {$this->table_name} (username, email, password, role) 
