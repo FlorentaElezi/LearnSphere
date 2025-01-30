@@ -14,9 +14,8 @@ if (!isset($_SESSION['user_id'])) {
     header("Location: loginForm.php"); 
     exit;
 }
-
 ?>
-<a href="logOut.php">Logout</a>
+
 
 <?php include ('Header.html')?>
 
@@ -27,6 +26,12 @@ if (!isset($_SESSION['user_id'])) {
       <input type="text" class="form-control" placeholder="Search Lecturers...">
   </div>
 </div>
+
+<?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+    <div class="admin-dashboard">
+        <a href="Dashboard.php" class="dashboard-btn">Go to Dashboard</a>
+    </div>
+    <?php endif; ?>
 
 <section class="team-container">
         <div class="team-card">
@@ -148,7 +153,7 @@ if (!isset($_SESSION['user_id'])) {
     </script>
     </section>
     <?php 
-echo "Welcome, " . $_SESSION['username'] . "!";
+echo "Welcome, " . $_SESSION['email'] . "!";
 ?>
 <a id= "logout" href="logOut.php">LogOut</a>
     <?php include ('Footer.html')?>

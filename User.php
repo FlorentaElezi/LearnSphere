@@ -9,14 +9,23 @@ class User {
 
     public function register($username, $email, $password) {
         try {
-            $query = "INSERT INTO {$this->table_name} (username, email, password) VALUES (:username, :email, :password)";
-            $stmt = $this->conn->prepare($query);
+            $role = (substr(strrchr($email, "@"), 1) == 'ubt-uni.net') ? 'admin' : 'user';
 
-            $stmt->bindParam(':username', $username);
-            $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
+    $query = "INSERT INTO {$this->table_name} (username, email, password, role) 
+              VALUES (:username, :email, :password, :role)";
 
-            return $stmt->execute();
+    $stmt = $this->conn->prepare($query);
+
+    $stmt->bindParam(':username', $username);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', password_hash($password, PASSWORD_DEFAULT));
+    $stmt->bindParam(':role', $role);
+
+    if ($stmt->execute()) {
+        return true;
+    }
+    return false;
+
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage(); 
             return false;
@@ -36,11 +45,24 @@ class User {
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
                 $_SESSION['email'] = $row['email'];
-                $_SESSION['username'] = $row['username']; 
-                return true;
+                
+                $emailDomain = substr(strrchr($email, "@"), 1); 
+                if ($emailDomain == "ubt-uni.net") {
+                    $_SESSION['role'] = 'admin';  
+                } else {
+                    $_SESSION['role'] = 'user';  
+                }
+
+                if ($_SESSION['role'] == 'admin') {
+                    header("Location: Dashboard.php");  
+                } else {
+                    header("Location: kurset.php");  
+                }
+                exit;
             }
         }
-        return false;
-    }    
+
+        return false;  
+    }
 }
 ?>

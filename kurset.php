@@ -25,6 +25,12 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 
+    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
+    <div class="admin-dashboard">
+        <a href="Dashboard.php" class="dashboard-btn">Go to Dashboard</a>
+    </div>
+    <?php endif; ?>
+
     <h2 class="dev">Frontend Development</h2>
 
     <div class="container">
@@ -207,7 +213,7 @@ if (!isset($_SESSION['user_id'])) {
     });
 </script>
 <?php 
-echo "Welcome, " . $_SESSION['username'] . "!";
+echo "Welcome, " . $_SESSION['email'] . "!";
 ?>
 <a id= "logout" href="logOut.php">LogOut</a>
 <?php include ('Footer.html')?>
