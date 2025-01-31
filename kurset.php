@@ -29,9 +29,7 @@ if (!isset($_SESSION['user_id'])) {
 <?php if (isset($_SESSION['role'])): ?>
     <div class="dashboard-btn-container">
         <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="adminDashboard.php" class="dashboard-btn">Go to Admin Dashboard</a>
-        <?php elseif ($_SESSION['role'] == 'user'): ?>
-            <a href="userDashboard.php" class="dashboard-btn">Go to User Dashboard</a>
+            <a href="adminDashboard.php" class="dashboard-btn">Go to Dashboard</a>
         <?php endif; ?>
     </div>
 <?php endif; ?>
@@ -178,7 +176,14 @@ if (!isset($_SESSION['user_id'])) {
             <a href="ourTeam.php"><h3>Elara Storm</h3></a>
         </div>
         <div class="apply-button">
-            <button>Apply Now</button>
+        <div class="apply-button">
+        <form method="POST" action="apply.php">
+        <input type="hidden" name="course_id" value="COURSE_ID">
+        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
+        <button type="submit" name="apply">Apply Now</button>
+        </form>
+        </div>
+
         </div>
     </div>
 </div>

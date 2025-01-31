@@ -59,12 +59,66 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         <td><?= $user['username'] ?></td>
                         <td><?= $user['email'] ?></td>
                         <td><?= $user['role'] ?></td> 
-                        <td><a href="editUser.php?id=<?= $user['id'] ?>">Edit</a></td>
-                        <td><a href="deleteUser.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
+                        <td><a href="CRUD/editUser.php?id=<?= $user['id'] ?>">Edit</a></td>
+                        <td><a href="CRUD/deleteUser.php?id=<?= $user['id'] ?>" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a></td>
                     </tr>
                 <?php } ?>
             </tbody>
         </table>
+
+        <?php
+$db = new Database();
+$connection = $db->getConnection();
+
+$query = "SELECT id, photo, CourseName, Lecturer FROM kurset";
+$stmt = $connection->prepare($query);
+$stmt->execute();
+$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Courses</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <h3>Manage Courses</h3>
+
+    <div class="main-content">
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Photo</th>
+                    <th>Course Name</th>
+                    <th>Lecturer</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($courses as $course) { ?>
+                    <tr>
+                        <td><?= $course['id'] ?></td>
+                        <td>
+                            <img src="data:image/jpeg;base64,<?= base64_encode($course['photo']) ?>" class="course-img" alt="Course Image">
+                        </td>
+                        <td><?= $course['CourseName'] ?></td>
+                        <td><?= $course['Lecturer'] ?></td>
+                        <td><a href="CRUD/editCourse.php?id=<?= $course['id'] ?>">Edit</a></td>
+                        <td><a href="CRUD/deleteCourse.php?id=<?= $course['id'] ?>" onclick="return confirm('Are you sure you want to delete this course?');">Delete</a></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
         <a id="logout" href="logOut.php">LogOut</a>
     </div>
     <script>

@@ -30,9 +30,7 @@ if (!isset($_SESSION['user_id'])) {
 <?php if (isset($_SESSION['role'])): ?>
     <div class="dashboard-btn-container">
         <?php if ($_SESSION['role'] == 'admin'): ?>
-            <a href="adminDashboard.php" class="dashboard-btn">Go to Admin Dashboard</a>
-        <?php elseif ($_SESSION['role'] == 'user'): ?>
-            <a href="userDashboard.php" class="dashboard-btn">Go to User Dashboard</a>
+            <a href="adminDashboard.php" class="dashboard-btn">Go to Dashboard</a>
         <?php endif; ?>
     </div>
 <?php endif; ?>

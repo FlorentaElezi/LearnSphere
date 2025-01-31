@@ -55,9 +55,9 @@ class User {
                 }
 
                 if ($_SESSION['role'] == 'admin') {
-                    header("Location: Dashboard.php");  
+                    header("Location: adminDashboard.php");  
                 } else {
-                    header("Location: kurset.php");  
+                    header("Location: userDashboard.php");  
                 }
                 exit;
             }

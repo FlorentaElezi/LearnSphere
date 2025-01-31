@@ -81,8 +81,9 @@
 <?php
 session_start();
 
-include_once 'Database.php';
-include_once 'User.php';
+include_once '../Database.php'; 
+include_once '../User.php';      
+
 
 if (!isset($_SESSION['email']) || $_SESSION['role'] !== 'admin') {  
     header("Location: loginForm.php");
