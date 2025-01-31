@@ -16,7 +16,13 @@ $query = "SELECT id, username, email, role FROM users";
 $stmt = $connection->prepare($query);
 $stmt->execute();
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$query = "SELECT id, photo, CourseName, Lecturer FROM kurset";
+$stmt = $connection->prepare($query);
+$stmt->execute();
+$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +46,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="main-content">
+
         <h3>Manage Users</h3>
         <table class="user-table">
             <thead>
@@ -66,29 +73,7 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
 
-        <?php
-$db = new Database();
-$connection = $db->getConnection();
-
-$query = "SELECT id, photo, CourseName, Lecturer FROM kurset";
-$stmt = $connection->prepare($query);
-$stmt->execute();
-$courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Courses</title>
-    <link rel="stylesheet" href="dashboard.css">
-</head>
-<body>
-
-    <h3>Manage Courses</h3>
-
-    <div class="main-content">
+        <h3>Manage Courses</h3>
         <table class="user-table">
             <thead>
                 <tr>
@@ -115,12 +100,10 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <?php } ?>
             </tbody>
         </table>
-    </div>
-</body>
-</html>
 
         <a id="logout" href="logOut.php">LogOut</a>
     </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const deleteLinks = document.querySelectorAll("a[href^='deleteUser.php']");
@@ -135,5 +118,6 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
             });
         });
     </script>
+
 </body>
 </html>
