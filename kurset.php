@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: loginForm.php"); 
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,34 +16,30 @@
     <link rel="stylesheet" href="kurset.css">
 </head>
 <body>
-<?php
-session_start();
+<?php include ('Header.html')?>
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: loginForm.php"); 
-    exit;
-}
-?>
-    <?php include ('Header.html')?>
-    
-    <div class="search-bg">
-        <h1>Start Developing With Us</h1>
-        <h3> Learn Sphere</h3>
-        <div class="search">
-            <input type="text" class="form-control" placeholder="Search Courses...">
-        </div>
+<div class="search-bg">
+    <h1>Start Developing With Us</h1>
+    <h3> Learn Sphere</h3>
+    <div class="search">
+        <input type="text" class="form-control" placeholder="Search Courses...">
     </div>
+</div>
 
-    <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-    <div class="admin-dashboard">
-        <a href="Dashboard.php" class="dashboard-btn">Go to Dashboard</a>
+<?php if (isset($_SESSION['role'])): ?>
+    <div class="dashboard-btn-container">
+        <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="adminDashboard.php" class="dashboard-btn">Go to Admin Dashboard</a>
+        <?php elseif ($_SESSION['role'] == 'user'): ?>
+            <a href="userDashboard.php" class="dashboard-btn">Go to User Dashboard</a>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
+<?php endif; ?>
 
-    <h2 class="dev">Frontend Development</h2>
+<h2 class="dev">Frontend Development</h2>
 
-    <div class="container">
-        <div class="courses">
+<div class="container">
+    <div class="courses">
         <div class="course-images">
             <img src="Pics/html-image.png" alt="html-img">
         </div>
@@ -42,12 +47,12 @@ if (!isset($_SESSION['user_id'])) {
             <h2>HTML</h2>
         </div>
         <div class="lecturer-names">
-        <a href="ourTeam.php"><h3>Jessica Pearson</h3></a>
+            <a href="ourTeam.php"><h3>Jessica Pearson</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
         </div>
-        </div>
+    </div>
 
     <div class="courses">
         <div class="course-images">
@@ -57,7 +62,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>CSS</h2>
         </div>
         <div class="lecturer-names">
-        <a href="ourTeam.php"><h3>Harvey Specter</h3></a>
+            <a href="ourTeam.php"><h3>Harvey Specter</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -72,7 +77,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>JavaScript</h2>
         </div>
         <div class="lecturer-names">
-        <a href="ourTeam.php"><h3>Mia Bennet</h3></a>
+            <a href="ourTeam.php"><h3>Mia Bennet</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -80,11 +85,9 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 
-
 <h2 class="dev">Backend Development</h2>
 
-    <div class="container">
-
+<div class="container">
     <div class="courses">
         <div class="course-images">
             <img src="Pics/python-imagee.png" alt="python-img">
@@ -93,7 +96,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Python</h2>
         </div>
         <div class="lecturer-names">
-        <a href="ourTeam.php"><h3>Tegan Price</h3></a>
+            <a href="ourTeam.php"><h3>Tegan Price</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -108,7 +111,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>PHP</h2>
         </div>
         <div class="lecturer-names">
-           <a href="ourTeam.php"><h3>Emmet Crawfoord</h3></a>
+            <a href="ourTeam.php"><h3>Emmet Crawfoord</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -123,7 +126,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>JAVA</h2>
         </div>
         <div class="lecturer-names">
-           <a href="ourTeam.php"><h3>Wes Gibbins</h3></a>
+            <a href="ourTeam.php"><h3>Wes Gibbins</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -131,11 +134,9 @@ if (!isset($_SESSION['user_id'])) {
     </div>
 </div>
 
-
 <h2 class="dev">Database</h2>
 
-    <div class="container">
-
+<div class="container">
     <div class="courses">
         <div class="course-images">
             <img src="Pics/mysql-image.png" alt="sql-img">
@@ -144,7 +145,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>MySQL</h2>
         </div>
         <div class="lecturer-names">
-           <a href="ourTeam.php"><h3>Lucas Harrington</h3></a>
+            <a href="ourTeam.php"><h3>Lucas Harrington</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -174,7 +175,7 @@ if (!isset($_SESSION['user_id'])) {
             <h2>Oracle Database</h2>
         </div>
         <div class="lecturer-names">
-        <a href="ourTeam.php"><h3>Elara Storm</h3></a>
+            <a href="ourTeam.php"><h3>Elara Storm</h3></a>
         </div>
         <div class="apply-button">
             <button>Apply Now</button>
@@ -212,10 +213,11 @@ if (!isset($_SESSION['user_id'])) {
         });
     });
 </script>
+
 <?php 
 echo "Welcome, " . $_SESSION['email'] . "!";
 ?>
-<a id= "logout" href="logOut.php">LogOut</a>
+<a id="logout" href="logOut.php">LogOut</a>
 <?php include ('Footer.html')?>
 </body>
 </html>
