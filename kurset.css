@@ -127,15 +127,15 @@
     font-weight: bold;
     color: rgb(60, 84, 218);;
 }
-.admin-dashboard {
+.dashboard-btn-container {
     display: flex;
     justify-content: flex-end;
     text-align: center;
-    margin: 20px 0;
+    margin: 40px 0; 
     font-family: Arial, Helvetica, sans-serif;
-}
-
-.dashboard-btn {
+  }
+  
+  .dashboard-btn {
     background-color: rgb(60, 84, 218);
     color: white;
     margin-left: 8px;
@@ -143,11 +143,12 @@
     padding: 10px;
     border: none;
     border-radius: 5px;
-    cursor: pointer;   
+    cursor: pointer;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.dashboard-btn:hover {
-   opacity: 0.7;
-   background-color: rgb(50, 70, 180);
-}
+  }
+  
+  .dashboard-btn:hover {
+    opacity: 0.7;
+    background-color: rgb(50, 70, 180);
+  }
+  

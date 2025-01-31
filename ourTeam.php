@@ -27,11 +27,15 @@ if (!isset($_SESSION['user_id'])) {
   </div>
 </div>
 
-<?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin'): ?>
-    <div class="admin-dashboard">
-        <a href="Dashboard.php" class="dashboard-btn">Go to Dashboard</a>
+<?php if (isset($_SESSION['role'])): ?>
+    <div class="dashboard-btn-container">
+        <?php if ($_SESSION['role'] == 'admin'): ?>
+            <a href="adminDashboard.php" class="dashboard-btn">Go to Admin Dashboard</a>
+        <?php elseif ($_SESSION['role'] == 'user'): ?>
+            <a href="userDashboard.php" class="dashboard-btn">Go to User Dashboard</a>
+        <?php endif; ?>
     </div>
-    <?php endif; ?>
+<?php endif; ?>
 
 <section class="team-container">
         <div class="team-card">
