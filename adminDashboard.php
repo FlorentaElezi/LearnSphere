@@ -2,6 +2,7 @@
 session_start();
 include_once 'Database.php';
 include_once 'User.php';
+include_once 'CRUD\Course.php';
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: loginForm.php");
@@ -11,6 +12,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
 $db = new Database();
 $connection = $db->getConnection();
 $user = new User($connection);
+$course = new Course($connection);
 
 $query = "SELECT id, username, email, role FROM users";
 $stmt = $connection->prepare($query);
@@ -21,6 +23,16 @@ $query = "SELECT id, photo, CourseName, Lecturer FROM kurset";
 $stmt = $connection->prepare($query);
 $stmt->execute();
 $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (isset($_GET['deleteCourseId'])) {
+    $courseId = $_GET['deleteCourseId'];
+    if ($course->deleteCourse($courseId)) {
+        header("Location: adminDashboard.php"); 
+        exit;
+    } else {
+        echo "Error: Course could not be deleted.";
+    }
+}
 ?>
 
 <!DOCTYPE html>
