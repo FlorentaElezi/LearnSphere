@@ -101,23 +101,35 @@ $courses = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tbody>
         </table>
 
-        <a id="logout" href="logOut.php">LogOut</a>
-    </div>
+<div id="addCourseForm" class="form-container">
+    <h3>Add New Course</h3>
+    <form action="CRUD/addCourse.php" method="POST" enctype="multipart/form-data">
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" required>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const deleteLinks = document.querySelectorAll("a[href^='deleteUser.php']");
+        <label for="lecturer">Lecturer:</label>
+        <input type="text" id="lecturer" name="lecturer" required>
 
-            deleteLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    const confirmation = confirm("Are you sure you want to delete this user?");
-                    if (!confirmation) {
-                        event.preventDefault(); 
-                    }
-                });
-            });
-        });
-    </script>
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" required>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<a id="logout" href="logOut.php">LogOut</a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const showFormBtn = document.getElementById("showFormBtn");
+    const addCourseForm = document.getElementById("addCourseForm");
+
+    showFormBtn.addEventListener("click", function() {
+        addCourseForm.classList.toggle("hidden");
+    });
+});
+</script>
 
 </body>
 </html>

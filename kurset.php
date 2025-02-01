@@ -1,10 +1,50 @@
 <?php
+ob_start(); 
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: loginForm.php"); 
+    header("Location: loginForm.php");
     exit;
 }
+
+class kurset {
+    private $conn;
+    private $table_name = 'kurset';
+
+    public function __construct($db) {
+        $this->conn = $db;
+    }
+
+    public function addCourse($courseName, $lecturer, $photo) {
+        try {
+            $query = "INSERT INTO {$this->table_name} (CourseName, Lecturer, Photo) 
+                      VALUES (:courseName, :lecturer, :photo)";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(':courseName', $courseName);
+            $stmt->bindParam(':lecturer', $lecturer);
+            $stmt->bindParam(':photo', $photo);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+
+            return false;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
+    public function getAllCourses() {
+        $query = "SELECT * FROM {$this->table_name} ORDER BY created_at DESC LIMIT 3";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC); 
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
