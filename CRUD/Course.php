@@ -71,5 +71,26 @@ class Course {
             return false;
         }
     }
+    public function addCourse($courseName, $lecturer, $photo) {
+        try {
+            $query = "INSERT INTO {$this->table_name} (CourseName, Lecturer, Photo) 
+                      VALUES (:courseName, :lecturer, :photo)";
+
+            $stmt = $this->conn->prepare($query);
+
+            $stmt->bindParam(':courseName', $courseName);
+            $stmt->bindParam(':lecturer', $lecturer);
+            $stmt->bindParam(':photo', $photo);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+
+            return false;
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 ?>

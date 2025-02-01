@@ -1,12 +1,12 @@
 <?php 
 session_start();
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header("Location: ErrorPage.php");
+    header("Location: ../loginForm.php");
     exit();
 }
 
 include_once '../Database.php';
-include_once '../kurset.php'; 
+include_once '../Course.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db = new Database();
@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $photo = $targetFile; 
     }
 
-    $kurset = new kurset($connection); 
+    $kurset = new Course($connection); 
     $kurset->addCourse($courseName, $lecturer, $photo); 
 
-    header("Location: adminDashboard.php");
+    header("Location: ../adminDashboard.php");
     exit();
 }
 ?>

@@ -1,37 +1,33 @@
-<?php
-include_once '../Database.php';
-include_once '../kurset.php';
-
-if (!isset($_SESSION['user_id'])) {
+<?php 
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header("Location: ../loginForm.php");
-    exit;
+    exit();
 }
 
-$db = new Database();
-$connection = $db->getConnection();
-$kurset = new kurset($connection);
+include_once '../Database.php';
+include_once 'Course.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $db = new Database();
+    $connection = $db->getConnection();
     $courseName = $_POST['courseName'];
     $lecturer = $_POST['lecturer'];
     $photo = "";
 
     if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
-        $targetDirectory = "../Pics/";
+        $targetDirectory = "../Pics/"; 
         $targetFile = $targetDirectory . basename($_FILES["photo"]["name"]);
-        move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile);
-        $photo = $targetFile;
+        move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile); 
+        $photo = $targetFile; 
     }
 
-    if ($kurset->addCourse($courseName, $lecturer, $photo)) {
-        header("Location: ../kurset.php"); 
+    $course = new Course($connection); 
+    if ($course->addCourse($courseName, $lecturer, $photo)) {
+        header("Location: ../kurset.php");
         exit();
     } else {
         echo "Error: Could not add course.";
     }
 }
-
-$newCourses = $kurset->getAllCourses();
-
 ?>
-
