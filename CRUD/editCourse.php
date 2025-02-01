@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
         exit;
     }
 } else {
-    header("Location: adminDashboard.php");
+    header("Location: ../adminDashboard.php");
     exit;
 }
 
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($course->updateCourse($id, $courseName, $lecturer, $photo)) {
-        header("Location: adminDashboard.php");
+        header("Location: ../adminDashboard.php");
         exit;
     } else {
         echo "Error updating course.";
