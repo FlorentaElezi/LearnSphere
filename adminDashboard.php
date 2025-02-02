@@ -102,7 +102,7 @@ if (isset($_GET['deleteCourseId'])) {
                     <tr>
                         <td><?= $course['id'] ?></td>
                         <td>
-                            <img src="data:image/jpeg;base64,<?= base64_encode($course['photo']) ?>" class="course-img" alt="Course Image">
+                        <img src="Pics/<?= htmlspecialchars($course['photo']) ?>" class="course-img" alt="Course Image">
                         </td>
                         <td><?= $course['CourseName'] ?></td>
                         <td><?= $course['Lecturer'] ?></td>
