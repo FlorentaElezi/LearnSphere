@@ -142,11 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="email" name="email" value="<?= $userData['email']; ?>" required><br><br>
 
         <label for="role">Role:</label>
-        <select name="role" id="role">
-            <option value="user" <?= $userData['role'] == 'user' ? 'selected' : ''; ?>>User</option>
-            <option value="admin" <?= $userData['role'] == 'admin' ? 'selected' : ''; ?>>Admin</option>
-        </select><br><br>
-
+        <input type="text" name="role" value="<?= $userData['role']; ?>" readonly><br><br>
         <input type="submit" value="Save Changes">
     </form>
 </div>
