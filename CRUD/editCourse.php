@@ -27,15 +27,21 @@ if (isset($_GET['id'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $courseName = isset($_POST['courseName']) ? $_POST['courseName'] : '';
-    $lecturer = isset($_POST['lecturer']) ? $_POST['lecturer'] : '';
-
-    if (!empty($_FILES['photo']['tmp_name'])) {
-        $photo = file_get_contents($_FILES['photo']['tmp_name']);
+    $courseName = $_POST['courseName'] ?? '';
+    $lecturer = $_POST['lecturer'] ?? '';
+    if (!empty($_FILES['photo']['name'])) {
+        $targetDir = "../Pics/";
+        $fileName = basename($_FILES['photo']['name']);
+        $targetFilePath = $targetDir . $fileName;
+        if (move_uploaded_file($_FILES['photo']['tmp_name'], $targetFilePath)) {
+            $photo = $fileName; 
+        } else {
+            echo "Error uploading file.";
+            exit;
+        }
     } else {
-        $photo = isset($courseData['photo']) ? $courseData['photo'] : null;
+        $photo = $courseData['Photo'] ?? null;
     }
-
     if ($course->updateCourse($id, $courseName, $lecturer, $photo)) {
         header("Location: ../adminDashboard.php");
         exit;
@@ -126,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <div class="editCourse">
     <h2>Edit Course</h2>
 
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         <label for="id">ID:</label>
         <input type="text" name="id" value="<?= isset($courseData['id']) ? htmlspecialchars($courseData['id']) : ''; ?>" readonly>
 
@@ -137,10 +143,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="text" name="lecturer" value="<?= isset($courseData['Lecturer']) ? htmlspecialchars($courseData['Lecturer']) : ''; ?>" required>
 
         <label for="photo">Current Photo:</label>
-        <?php if (!empty($courseData['photo'])): ?>
-            <img src="data:image/jpeg;base64,<?= base64_encode($courseData['photo']); ?>" class="current-photo" alt="Course Image">
+        <?php if (!empty($courseData['Photo'])): ?>
+            <img src="../Pics/<?= htmlspecialchars($courseData['Photo']) ?>" class="current-photo" alt="Course Image">
         <?php else: ?>
-            <p>No image available.</p>
+        <p>No image available.</p>
         <?php endif; ?>
 
         <label for="photo">Upload New Photo:</label>

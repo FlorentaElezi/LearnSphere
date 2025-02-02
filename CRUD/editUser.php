@@ -102,7 +102,7 @@ if (isset($_GET['id'])) {
     $stmt->execute();  
     $userData = $stmt->fetch(PDO::FETCH_ASSOC);  
 } else {
-    header("Location: adminDashboard.php");
+    header("Location: ../adminDashboard.php");
     exit;
 }
 
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':id', $id);
 
     if ($stmt->execute()) {
-        header("Location: adminDashboard.php");
+        header("Location: ../adminDashboard.php");
         exit;
     } else {
         echo "Error updating user.";

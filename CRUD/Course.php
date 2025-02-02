@@ -53,24 +53,21 @@ class Course {
             $query = "UPDATE {$this->table_name} SET 
                       CourseName = :courseName, 
                       Lecturer = :lecturer, 
-                      photo = :photo 
+                      Photo = :photo
                       WHERE id = :id";
             $stmt = $this->conn->prepare($query);
-
+    
             $stmt->bindParam(':id', $courseId);
             $stmt->bindParam(':courseName', $courseName);
             $stmt->bindParam(':lecturer', $lecturer);
-            $stmt->bindParam(':photo', $photo, PDO::PARAM_LOB);
-
-            if ($stmt->execute()) {
-                return true;
-            }
-            return false;
+            $stmt->bindParam(':photo', $photo, PDO::PARAM_STR);
+    
+            return $stmt->execute();
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage();
             return false;
         }
-    }
+    }    
     public function addCourse($courseName, $lecturer, $photo) {
         try {
             $query = "INSERT INTO {$this->table_name} (CourseName, Lecturer, Photo) 
