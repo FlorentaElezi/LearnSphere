@@ -113,35 +113,42 @@ if (isset($_GET['deleteCourseId'])) {
             </tbody>
         </table>
 
-<div id="addCourseForm" class="form-container">
-    <h3>Add New Course</h3>
-    <form action="CRUD/addCourse.php" method="POST" enctype="multipart/form-data">
-        <label for="courseName">Course Name:</label>
-        <input type="text" id="courseName" name="courseName" required>
+        <button id="showAddCourseBtn" class="btn">Add Course</button>
 
-        <label for="lecturer">Lecturer:</label>
-        <input type="text" id="lecturer" name="lecturer" required>
+        <div id="addCourseForm" class="form-container hidden">
+            <h3>Add New Course</h3>
+            <form action="CRUD/addCourse.php" method="POST" enctype="multipart/form-data">
+                <label for="courseName">Course Name:</label>
+                <input type="text" id="courseName" name="courseName" required>
 
-        <label for="photo">Photo:</label>
-        <input type="file" id="photo" name="photo" required>
+                <label for="lecturer">Lecturer:</label>
+                <input type="text" id="lecturer" name="lecturer" required>
 
-        <button type="submit">Submit</button>
-    </form>
-</div>
+                <label for="photo">Photo:</label>
+                <input type="file" id="photo" name="photo" required>
 
-<a id="logout" href="logOut.php">LogOut</a>
-</div>
+                <button type="submit">Submit</button>
+                <button type="button" class="cancel-btn" id="cancelBtn">Cancel</button>
+            </form>
+        </div>
+            <a id="logout" href="logOut.php">LogOut</a>
+        </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const showFormBtn = document.getElementById("showFormBtn");
-    const addCourseForm = document.getElementById("addCourseForm");
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const showFormBtn = document.getElementById("showAddCourseBtn");
+        const addCourseForm = document.getElementById("addCourseForm");
+        const cancelBtn = document.getElementById("cancelBtn");
 
-    showFormBtn.addEventListener("click", function() {
-        addCourseForm.classList.toggle("hidden");
+        showFormBtn.addEventListener("click", function() {
+            addCourseForm.classList.toggle("hidden");
+        });
+
+        cancelBtn.addEventListener("click", function() {
+        addCourseForm.classList.add("hidden");
     });
-});
-</script>
+    });
+    </script>
 
 </body>
 </html>

@@ -203,4 +203,33 @@ table {
     opacity: 0.7;
     background-color: rgb(50, 70, 180);
 }
+.btn {
+    display: block;
+    width: 150px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #3b5bdb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 0;
+}
 
+.btn:hover {
+    background-color: #2c46b3;
+}
+
+.hidden {
+    display: none;
+}
+.cancel-btn {
+    background-color: #2c46b3;
+    color: white;
+}
+
+.form-container.hidden {
+    display: none;
+}
